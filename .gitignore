@@ -47,9 +47,6 @@ Thumbs.db
 __build__/**
 .webpack.json
 
-# Doc #
-/doc/
-
 # IDE #
 .idea/
 *.swp

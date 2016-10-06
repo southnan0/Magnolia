@@ -1,0 +1,18 @@
+{
+    "header":{
+        "code":"0000",
+        "message":""
+    },
+    "body":{
+        "menuList":[{
+            "menuId":"about",
+            "menuName":"关于我们"
+        },{
+            "menuId":"products",
+            "menuName":"产品介绍"
+        },{
+            "menuId":"join",
+            "menuName":"加入我们"
+        }]
+    }
+}
