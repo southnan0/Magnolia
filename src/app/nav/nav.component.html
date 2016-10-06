@@ -4,7 +4,7 @@
             <a [routerLink]="['']">logo</a>
         </div>
         <div class="nav-wrapper">
-            <ul class="main-nav"><li><a>1</a></li></ul>
+            <ul class="main-nav"><li *ngFor="let menu of menuList"><a>{{menu.menuName}}</a></li></ul>
             <ul class="tool-nav"><li><a>2</a></li></ul>
         </div>
     </div>
