@@ -1585,7 +1585,7 @@ p.light {
     white-space: nowrap;
     height: 40px;
     width: 143px;
-    background-image: url(logo.svg);
+    background-image: url('/img/logo.svg');
     display: block;
     background-repeat: no-repeat
 }
@@ -11867,7 +11867,7 @@ p a:hover {
     }
 
     #navigation #logo a {
-        background-image: url(https://d3k90kvix375hb.cloudfront.net/assets/logo-purple-08fb38cebb99e3aac5202df018eb337c5be74d5214768c90a8198c97420e4201.svg)
+        background-image: url("/img/logo.svg");
     }
 
     #navigation li>a {
@@ -11920,7 +11920,7 @@ p a:hover {
 }
 
 #navigation:not(.active) #logo a {
-    background-image: url(https://d3k90kvix375hb.cloudfront.net/assets/logo-purple-08fb38cebb99e3aac5202df018eb337c5be74d5214768c90a8198c97420e4201.svg)
+    background-image: url("/img/logo.svg")
 }
 
 #hero {
@@ -12391,16 +12391,6 @@ p a:hover {
         background-image:url(https://d3k90kvix375hb.cloudfront.net/assets/home/icons/langs/clojure_2x-51603457ec1219efc21fc79bd4b261a456f2673674a334173c243765d8f3f0d3.png);
         background-size: 41px 40px
     }
-}
-
-.scrubber {
-    padding-top: 3em;
-    cursor: ew-resize
-}
-
-.scrubber .content {
-    max-width: 720px;
-    margin: auto
 }
 
 #scrubber-handle {
