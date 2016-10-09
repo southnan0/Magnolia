@@ -1,0 +1,32 @@
+.purple {
+    background-color: #58488a;
+    // background-image: -webkit-linear-gradient(top, #58488a, #5d64d0);
+    // background-image: linear-gradient(to bottom, #58488a, #5d64d0);
+  min-height:25em;
+  overflow:hidden;
+}
+
+.purple h2 {
+    color: #fff;
+    margin-top: .25em;
+    font-size: 32px;
+    letter-spacing: -.01em;
+    font-weight: 100;
+}
+
+.purple p {
+    color: #fff;
+    color: rgba(255,255,255,0.8);
+text-align:left;
+text-indent: 2em;
+}
+
+.scrubber {
+    padding-top: 3em;
+    cursor: ew-resize
+}
+
+.scrubber .content {
+    max-width: 720px;
+    margin: auto
+}

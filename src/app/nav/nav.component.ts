@@ -19,5 +19,4 @@ export class NavComponent implements OnInit {
         this.menuList = menuList
       })
   }
-
 }

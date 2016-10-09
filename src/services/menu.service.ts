@@ -6,7 +6,7 @@ import {Menu} from '../class/menu';
 export class MenuService {
     constructor(private http: Http) { }
     get(userName: string): Promise<Menu[]> {
-        return this.http.get(`menu?userName=${userName}`)
+        return this.http.get(`services/menu?userName=${userName}`)
             .toPromise()
             .then(response => response.json().body.menuList as Menu[])
             .catch(this.handleError)

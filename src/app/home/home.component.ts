@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+//todo  home是一个模块 ngModule
 @Component({
   selector: 'my-home',
   templateUrl: './home.component.html',

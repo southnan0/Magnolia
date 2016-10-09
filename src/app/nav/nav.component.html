@@ -1,11 +1,23 @@
-<nav>
+<nav id="navigation">
+    <span class="mobile-nav">
+      Show nav
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
     <div class="wrapper-full">
         <div id="logo">
             <a [routerLink]="['']">logo</a>
         </div>
         <div class="nav-wrapper">
-            <ul class="main-nav"><li *ngFor="let menu of menuList"><a>{{menu.menuName}}</a></li></ul>
-            <ul class="tool-nav"><li><a>2</a></li></ul>
+            <ul class="main-nav">
+                <li *ngFor="let menu of menuList"><a [routerLink]="[menu.menuId]">{{menu.menuName}}</a></li>
+            </ul>
+            <ul class="tool-nav">
+                <li></li>
+                <li class="user"><a>登录</a><span>或</span><a class="sign-up highlight">注册</a></li>
+            </ul>
         </div>
     </div>
 </nav>
