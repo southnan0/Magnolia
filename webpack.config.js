@@ -206,7 +206,7 @@ module.exports = function makeWebpackConfig() {
   ];
 
   if (!isTest && !isProd) {
-      config.plugins.push(new DashboardPlugin());
+      //config.plugins.push(new DashboardPlugin());
   }
 
   if (!isTest || !isTestWatch) {
