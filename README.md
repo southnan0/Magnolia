@@ -9,6 +9,10 @@ $ cd Magnolia
 # install the dependencies with npm
 $ npm install
 
+# install the typings
+$ npm i typings -g
+$ typings install
+
 # start the server
 $ npm start
 ```
