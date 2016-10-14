@@ -1,0 +1,142 @@
+#heroku-footer {
+  padding-top: 15px;
+  background: #f0f0f0;
+  box-shadow: 0 1px 1px 0 rgba(240, 240, 240, 0.1) inset;
+  font-size: 13px;
+  color: #999;
+  line-height: 1.8em;
+  -webkit-font-smoothing: antialiased;
+
+  .hide {
+    display: none;
+  }
+
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .wrapper {
+    *zoom: 1;
+    position: relative;
+    width: 94%;
+    max-width: 1200px;
+    padding: 2em 0;
+    margin: 0 auto;
+  }
+
+  &:before {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+
+  a {
+    &:link {
+      color: #999;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: #999;
+      text-decoration: none;
+    }
+
+    &:hover {
+      color: #4d4d4d;
+    }
+
+    &:active {
+      color: #4d4d4d;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    font-weight: 200;
+  }
+
+  h1,
+  h2,
+  h5 {
+    line-height: 1.1em;
+    padding: 0;
+  }
+
+  h3 {
+    line-height: 1.1em;
+    padding: 0;
+    color: #6e5baa;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  h4 {
+    line-height: 1.1em;
+    padding: 0;
+    margin: 1.33em 0;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: #211746;
+  }
+
+  .col {
+    display: block;
+    float: left;
+
+    ul {
+      margin: 1em 0;
+    }
+
+    li {
+      margin: 0;
+    }
+  }
+
+  .heroku-footer-links {
+    *zoom: 1;
+    width: 100%;
+    text-align: center;
+
+    &:before {
+      content: " ";
+      display: table;
+    }
+
+    &:after {
+      content: " ";
+      display: table;
+      clear: both;
+    }
+
+    .col {
+      width: 25%;
+      padding-right: 2%;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  #heroku-footer {
+    .heroku-footer-links {
+      .col {
+        width: auto;
+        padding-right: 0;
+        text-align: center;
+      }
+    }
+
+    h4 {
+      text-align: center;
+    }
+  }
+}
