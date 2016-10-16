@@ -36,7 +36,8 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(public appRef: ApplicationRef) {}
+  constructor(public appRef: ApplicationRef) {
+  }
   hmrOnInit(store) {
     console.log('HMR store', store);
   }
