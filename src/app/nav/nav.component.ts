@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MenuService} from '../../services/menu.service';
 import {Menu} from '../../class/menu';
 
@@ -9,14 +9,20 @@ import {Menu} from '../../class/menu';
   providers: [MenuService]
 })
 export class NavComponent implements OnInit {
-  menuList: Menu[];
-  constructor(private menuService: MenuService) {
+  menuList:Menu[];
+  menuShow:Boolean;
+
+  constructor(private menuService:MenuService) {
   }
 
-  ngOnInit(): void {
+  private _toggle():void {
+    this.menuShow = !this.menuShow;
+  }
+
+  ngOnInit():void {
     this.menuService
       .get('').then(menuList => {
-        this.menuList = menuList
-      })
+      this.menuList = menuList
+    })
   }
 }

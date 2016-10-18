@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BannerComponent } from './banner/banner.component';
 import { ApiService } from './shared';
 import { routing } from './app.routing';
+import {LoginModule} from './login/login.module';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 
@@ -20,7 +21,8 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     BrowserModule,
     HttpModule,
     FormsModule,
-    routing
+    routing,
+    LoginModule
   ],
   declarations: [
     AppComponent,

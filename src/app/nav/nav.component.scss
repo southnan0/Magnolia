@@ -106,6 +106,10 @@
         background-image: -webkit-linear-gradient(rgba(14, 10, 18, 0.95) 50%, rgba(14, 10, 18, 0) 100%);
         background-image: linear-gradient(rgba(14, 10, 18, 0.95) 50%, rgba(14, 10, 18, 0) 100%);
       }
+
+      a{
+        color: rgba(255,255,255,0.9);
+      }
     }
 
     #logo {
@@ -190,6 +194,10 @@
         padding-right: 0;
         margin-right: 0;
       }
+
+      >a{
+        color: rgba(255,255,255,0.9);
+      }
     }
   }
 }
@@ -267,6 +275,9 @@
           float: left;
           margin: 0 16px 0 0;
           padding: 0;
+          >a{
+            color: rgba(255,255,255,0.9);
+          }
         }
       }
     }
