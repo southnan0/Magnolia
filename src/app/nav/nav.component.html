@@ -16,7 +16,7 @@
             </ul>
             <ul class="tool-nav">
                 <li></li>
-                <li class="user"><a [routerLink]="['login']">登录</a><span>&nbsp;或&nbsp;</span><a class="sign-up highlight" [routerLink]="['register']">注册</a></li>
+                <li class="user"><a (click)="_goToLogin($event)">登录</a><span>&nbsp;或&nbsp;</span><a class="sign-up highlight" [routerLink]="['register']">注册</a></li>
             </ul>
         </div>
     </div>
