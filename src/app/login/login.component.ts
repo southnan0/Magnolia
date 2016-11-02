@@ -12,6 +12,13 @@ export class LoginComponent implements OnInit,OnChanges{
   }
 
   ngOnChanges():void{
+  }
+
+  _onSubmit(event:Event):void{
     console.info(this.userName)
+  }
+
+  _onChange(key:string,value:any):void{
+    this[key] = value;
   }
 }

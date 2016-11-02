@@ -1,4 +1,10 @@
-import {Component, NgModule, ModuleWithProviders, AfterContentInit, OnChanges} from '@angular/core';
+import {Component,
+  NgModule,
+  ModuleWithProviders,
+  AfterContentInit,
+  OnChanges,
+  Output,
+  EventEmitter} from '@angular/core';
 import {
   NG_VALUE_ACCESSOR,
   ControlValueAccessor,
@@ -16,7 +22,7 @@ const noop = () => {
   providers: []
 })
 export class MdButton implements OnChanges {
-
+  @Output() onSubmit = new EventEmitter();
   ngOnChanges() {
     console.info('onChanges')
   }
@@ -30,7 +36,7 @@ export class MdButton implements OnChanges {
   }
 
   _onSubmit(event:Event){
-    console.info('you click submit')
+    this.onSubmit.emit(event)
   }
 }
 

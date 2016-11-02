@@ -1,6 +1,6 @@
 <div class="login-cnt">
-  <md-input placeholder="用户名" class="full-width" value="{{userName}}"></md-input>
-  <md-input placeholder="密码" class="full-width" value="{{userPsw}}"></md-input>
+  <md-input placeholder="用户名" class="full-width" value="{{userName}}" (onChange)="_onChange('userName',$event)"></md-input>
+  <md-input placeholder="密码" class="full-width" value="{{userPsw}}" (onChange)="_onChange('userPsw',$event)"></md-input>
 
-  <md-button>确定</md-button>
+  <md-button (onSubmit)="_onSubmit($event)">确定</md-button>
 </div>

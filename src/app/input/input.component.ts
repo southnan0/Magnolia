@@ -1,4 +1,4 @@
-import {Component, Input, NgModule, ModuleWithProviders, AfterContentInit, OnChanges} from '@angular/core';
+import {Component, Input, NgModule, ModuleWithProviders, AfterContentInit, OnChanges,Output,EventEmitter} from '@angular/core';
 import {
   NG_VALUE_ACCESSOR,
   ControlValueAccessor,
@@ -8,6 +8,14 @@ import {CommonModule} from '@angular/common';
 
 const noop = () => {
 };
+
+interface InputEventTarget extends EventTarget{
+  value:string
+}
+
+interface InputTarget extends Event {
+  currentTarget:InputEventTarget
+}
 
 @Component({
   selector: 'md-input',
@@ -33,12 +41,18 @@ export class MdInput implements ControlValueAccessor,AfterContentInit,OnChanges 
     }
   }
 
+  @Output() onChange = new EventEmitter();
+
   ngOnChanges() {
     console.info('onChanges')
   }
 
   ngAfterContentInit() {
     console.info('ngAfterContentInit')
+  }
+
+  _onChange(event:InputTarget){
+    this.onChange.emit(event.currentTarget.value);
   }
 
   /**
