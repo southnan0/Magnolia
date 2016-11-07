@@ -1,0 +1,10 @@
+{
+  "header": {
+    "code": "0000",
+    "message": ""
+  },
+  "body": {
+    "userName": "玉兰花",
+    "city": "广州"
+  }
+}

@@ -1,10 +1,7 @@
-import {Component, Input, NgModule, ModuleWithProviders, AfterContentInit, OnChanges,Output,EventEmitter} from '@angular/core';
+import {Component, Input, NgModule, ModuleWithProviders, AfterContentInit, OnChanges,Output,EventEmitter,forwardRef} from '@angular/core';
 import {
-  NG_VALUE_ACCESSOR,
-  ControlValueAccessor,
   FormsModule,
 } from '@angular/forms';
-import {CommonModule} from '@angular/common';
 
 const noop = () => {
 };
@@ -20,10 +17,9 @@ interface InputTarget extends Event {
 @Component({
   selector: 'md-input',
   templateUrl: 'input.component.html',
-  styleUrls: ['input.component.scss'],
-  providers: []
+  styleUrls: ['input.component.scss']
 })
-export class MdInput implements ControlValueAccessor,AfterContentInit,OnChanges {
+export class MdInput implements AfterContentInit,OnChanges {
   private _placeholder:string;
   private _value:string;
 
@@ -55,32 +51,7 @@ export class MdInput implements ControlValueAccessor,AfterContentInit,OnChanges 
     this.onChange.emit(event.currentTarget.value);
   }
 
-  /**
-   * Implemented as part of ControlValueAccessor.
-   * TODO: internal
-   */
-  writeValue(value:any) {
-    this._value = value;
-  }
-
-  /**
-   * Implemented as part of ControlValueAccessor.
-   * TODO: internal
-   */
-  registerOnChange(fn:any) {
-    this._onChangeCallback = fn;
-  }
-
-  /**
-   * Implemented as part of ControlValueAccessor.
-   * TODO: internal
-   */
-  registerOnTouched(fn:any) {
-    this._onTouchedCallback = fn;
-  }
-
   private _onChangeCallback:(_:any) => void = noop;
-  private _onTouchedCallback:(_:any) => void = noop;
 }
 
 @NgModule({

@@ -37,6 +37,7 @@
   "devDependencies": {
     "@angularclass/hmr": "^1.0.1",
     "@angularclass/hmr-loader": "^3.0.2",
+    "angular2-router-loader": "^0.3.3",
     "angular2-template-loader": "^0.4.0",
     "autoprefixer": "^6.3.2",
     "awesome-typescript-loader": "^2.2.4",
@@ -60,6 +61,7 @@
     "sass-loader": "^4.0.0",
     "shelljs": "^0.7.0",
     "style-loader": "^0.13.0",
+    "systemjs": "^0.19.40",
     "ts-helpers": "^1.1.1",
     "tslint": "^3.4.0",
     "tslint-loader": "^2.1.0",
