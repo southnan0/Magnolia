@@ -1,4 +1,4 @@
-import {Component, OnInit,Input } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'my-banner',
@@ -6,12 +6,12 @@ import {Component, OnInit,Input } from '@angular/core';
   styleUrls: ['./banner.component.scss']
 })
 export class BannerComponent implements OnInit {
-  @Input() hello:string;
+  @Input() banner:any;
 
   constructor() {
   }
 
   ngOnInit():void {
-    
+
   }
 }

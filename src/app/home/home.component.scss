@@ -1,4 +1,19 @@
 // component styles are encapsulated and only applied to their components
 * {
-  color: #FFEF00;
+  color:#9086b1;
+}
+
+.purple {
+  //background-color: #58488a;
+  //background-color: #ad97c6;
+  background-color: #ebebf5;
+  // background-image: -webkit-linear-gradient(top, #58488a, #5d64d0);
+  // background-image: linear-gradient(to bottom, #58488a, #5d64d0);
+  padding: 1em;
+  overflow: hidden;
+}
+
+.purple p {
+  text-align: left;
+  text-indent: 2em;
 }
