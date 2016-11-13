@@ -8,7 +8,8 @@ import { CheckComponent } from './check/check.component';
 const routes: Routes = [
   { path: '', component: HomeComponent,canActivate:[CheckComponent] },
   { path: 'about', component: AboutComponent,canActivate:[CheckComponent]},
-  { path: 'login', loadChildren: './login/login.module#LoginModule'}
+  { path: 'login', loadChildren: './login/login.module#LoginModule'},
+  {path:'backend',loadChildren:'./backend/main.module#MainModule'}
 ];
 
 export const routing = RouterModule.forRoot(routes, { useHash: true });
