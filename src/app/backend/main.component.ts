@@ -1,8 +1,7 @@
 import {Component, OnInit, OnChanges} from '@angular/core';
 import '../../../node_modules/kindeditor/themes/default/default.css';
-require("imports?this=>window!../../../node_modules/kindeditor/kindeditor-all");
-
 declare var KindEditor:any;
+require("imports?this=>window!../../../node_modules/kindeditor/kindeditor-all");
 
 @Component({
   selector: 'my-backend',
@@ -11,17 +10,19 @@ declare var KindEditor:any;
   providers: []
 })
 export class MainComponent implements OnInit,OnChanges {
+  private editor:any;
 
   constructor() {
   }
 
   ngOnInit():void {
-    //console.info(KindEditor)
-    KindEditor.ready(function(K) {
-      this.editor = K.create('#editor_id');
-    });
+    this.editor = KindEditor.create('#editor_id');
   }
 
   ngOnChanges():void {
+  }
+
+  _submit():void{
+    console.info(this.editor.html())
   }
 }

@@ -4,12 +4,8 @@ import {HttpModule} from '@angular/http';
 import {FormsModule} from '@angular/forms';
 
 import {AppComponent} from './app.component';
-import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {CheckComponent} from './check/check.component';
-import {NavComponent} from './nav/nav.component';
-import {FooterComponent} from './footer/footer.component';
-import {BannerComponent} from './banner/banner.component';
 import {ApiService} from './shared';
 import {routing} from './app.routing';
 
@@ -24,11 +20,7 @@ import {removeNgStyles, createNewHosts} from '@angularclass/hmr';
   ],
   declarations: [
     AppComponent,
-    HomeComponent,
-    AboutComponent,
-    NavComponent,
-    FooterComponent,
-    BannerComponent
+    AboutComponent
   ],
   providers: [
     ApiService, CheckComponent
