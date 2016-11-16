@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+
 import {MenuService} from '../../services/menu.service';
 import {Menu} from '../../class/menu';
 import {ActivatedRoute,Router} from '@angular/router'
@@ -14,7 +15,7 @@ export class NavComponent implements OnInit {
   menuShow:Boolean;
   route:ActivatedRoute;
 
-  constructor(private router:Router,private menuService:MenuService) {
+  constructor(private router:Router, private menuService:MenuService) {
   }
 
   private _toggle():void {
@@ -33,6 +34,6 @@ export class NavComponent implements OnInit {
     })
   }
 
-  ngOnChanges(router: Router):void{
+  ngOnChanges(router:Router):void {
   }
 }
