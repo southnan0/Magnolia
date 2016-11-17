@@ -1,0 +1,27 @@
+.main-panel {
+  height:100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-panel {
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+.body-panel {
+  flex: 5;
+  display: flex;
+  flex-direction: row;
+  align-items:stretch;
+}
+
+.operate-panel {
+  flex: 2;
+  border-right: 1px solid #ccc;
+}
+
+.content-panel {
+  flex: 9;
+  min-width: 700px;
+}

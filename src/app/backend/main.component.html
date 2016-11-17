@@ -1,5 +1,12 @@
-<div>
-  后台页面
-  <button (click)="_submit($event)">发表</button>
-  <textarea id="editor_id" name="content" cols="100" rows="8"></textarea>
-</div>
+<div class="main-panel">
+  <header class="header-panel"></header>
+  <div class="body-panel">
+    <div class="operate-panel">
+      <my-menu></my-menu>
+    </div>
+    <div class="content-panel">
+      <button (click)="_submit($event)">发表</button>
+      <textarea id="editor_id" name="content" cols="100" rows="8"></textarea>
+    </div>
+  </div>
+  </div>

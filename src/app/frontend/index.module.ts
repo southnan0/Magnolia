@@ -25,4 +25,3 @@ import { CommonModule } from '@angular/common';
 })
 export class IndexModule {
 }
-//todo  navComponent render 有bug
