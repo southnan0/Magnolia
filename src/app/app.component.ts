@@ -2,6 +2,7 @@ import {Component, OnChanges} from '@angular/core';
 
 import {ApiService} from './shared';
 
+import '../style/reset.css';
 import '../style/app.scss';
 
 @Component({

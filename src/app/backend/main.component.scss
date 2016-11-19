@@ -1,7 +1,8 @@
 .main-panel {
-  height:100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: rgba(121, 88, 159, 0.04);
 }
 
 .header-panel {
@@ -13,15 +14,17 @@
   flex: 5;
   display: flex;
   flex-direction: row;
-  align-items:stretch;
+  align-items: stretch;
 }
 
 .operate-panel {
   flex: 2;
+  min-width: 150px;
   border-right: 1px solid #ccc;
 }
 
 .content-panel {
   flex: 9;
-  min-width: 700px;
+  padding: 16px;
+  //min-width: 700px;
 }

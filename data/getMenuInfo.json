@@ -5,7 +5,7 @@
     },
     "body":{
         "info":[{
-            "menuId":"23413",
+            "menuId":"users",
             "menuName":"用户管理",
             "parentMenuId":"",
             "parentMenuName":"",
@@ -15,7 +15,7 @@
             "editTime":"",
             "remark":"关于我们"
         },{
-          "menuId":"23415",
+          "menuId":"menus",
           "menuName":"菜单管理",
           "parentMenuId":"",
           "parentMenuName":"",
@@ -25,8 +25,18 @@
           "editTime":"",
           "remark":"关于我们"
         },{
-          "menuId":"23417",
+          "menuId":"role",
           "menuName":"角色管理",
+          "parentMenuId":"",
+          "parentMenuName":"",
+          "creator":"陈小姐",
+          "createTime":"2016-01-01",
+          "editor":"",
+          "editTime":"",
+          "remark":"关于我们"
+        },{
+          "menuId":"message",
+          "menuName":"信息管理",
           "parentMenuId":"",
           "parentMenuName":"",
           "creator":"陈小姐",

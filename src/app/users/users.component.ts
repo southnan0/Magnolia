@@ -2,12 +2,12 @@ import {Component, OnInit, OnChanges} from '@angular/core';
 
 
 @Component({
-  selector: 'my-backend',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss'],
+  selector: 'my-users',
+  templateUrl: './users.component.html',
+  styleUrls: ['./users.component.scss'],
   providers: []
 })
-export class MainComponent implements OnInit,OnChanges {
+export class UsersComponent implements OnInit,OnChanges {
   constructor() {
   }
 

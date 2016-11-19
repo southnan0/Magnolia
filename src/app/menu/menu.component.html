@@ -1,3 +1,5 @@
-<ul>
-  <li *ngFor="let menu of menus"><a href="#/frontend/{{menu.menuId}}">{{menu.menuName}}</a></li>
+<ul class="menu-area">
+  <li *ngFor="let menu of menus">
+    <a routerLink="/backend/{{menu.menuId}}" routerLinkActive="active">{{menu.menuName}}</a>
+  </li>
 </ul>

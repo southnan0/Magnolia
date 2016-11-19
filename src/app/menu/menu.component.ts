@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router'
+
 import {GetMenuInfoService} from '../../services/menu.service';
 import {Menu} from '../../class/menu';
 
@@ -10,10 +10,10 @@ import {Menu} from '../../class/menu';
   providers: [GetMenuInfoService]
 })
 export class MenuComponent implements OnInit {
-  route:ActivatedRoute;
   menus:Menu[];
 
-  constructor(private router:Router, private getMenuInfoService:GetMenuInfoService) {
+  constructor(private getMenuInfoService:GetMenuInfoService) {
+
   }
 
   ngOnInit():void {
@@ -23,6 +23,6 @@ export class MenuComponent implements OnInit {
     })
   }
 
-  ngOnChanges(router:Router):void {
+  ngOnChanges():void {
   }
 }

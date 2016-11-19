@@ -1,0 +1,6 @@
+<div class="editor-operate">
+  <md-button *ngIf="edit" class="editor-submit" (onSubmit)="_submit($event)">发表</md-button>
+  <md-button *ngIf="!edit" class="editor-submit" (onSubmit)="_edit($event)">编辑</md-button>
+</div>
+<textarea *ngIf="edit" id="editor_id" name="content" rows="8" [innerHTML]="message"></textarea>
+<div *ngIf="!edit" class="editor-view" [innerHTML]="message"></div>

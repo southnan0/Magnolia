@@ -29,8 +29,8 @@ export class GetMenuInfoService {
   get():Promise<Menu[]> {
     return this.http.post(`services/getMenuInfo`, {header: {operId: ''}})
       .toPromise()
-      .then(response=>response.json().body.info as Menu[], ()=> {
-        let data = Mock.mock({
+      .then(response=>response.json().body.info as Menu[]/*, ()=> {
+        /!*let data = Mock.mock({
           'header': {
             'code': '0000',
             'message': ''
@@ -49,9 +49,9 @@ export class GetMenuInfoService {
             }]
           }
         });
-        console.info(data.body.info)
+        console.info(data.body.info)*!/
         return data.body.info;
-      })
+      }*/)
       .catch(this.handleError)
   }
 

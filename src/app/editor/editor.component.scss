@@ -1,0 +1,22 @@
+.editor-operate {
+  text-align: right;
+  margin-bottom: 20px;
+  .editor-submit {
+    display: inline-block;
+    width: 100px;
+  }
+}
+
+#editor_id {
+  width: 100%;
+}
+
+.editor-view {
+  width: 100%;
+  border: 1px solid #dadada;
+  background-color: #fff;
+  min-height:400px;
+  color:#333;
+  text-align: left;
+}
+

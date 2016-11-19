@@ -1,0 +1,9 @@
+{
+  "header": {
+    "code": "0000",
+    "message": ""
+  },
+  "body": {
+    "message": "<span id='thx' style='line-height:25px;color:green;'>Welcome to Oschina Tools website</span>"
+  }
+}
