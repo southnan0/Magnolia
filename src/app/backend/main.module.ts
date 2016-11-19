@@ -4,7 +4,7 @@ import {MenuComponent} from '../menu/menu.component';
 import {UsersComponent} from '../users/users.component';
 import {MessageComponent} from '../message/message.component';
 import {EditorComponent} from '../editor/editor.component';
-import {MdTable} from '../table/table.component';
+/*import {MdTable} from '../table/table.component';*/
 import {routing} from './main.routing';
 import {CommonModule} from '@angular/common';
 import {MdButtonModule} from '../button/button.component';
@@ -24,7 +24,7 @@ import {FormsModule} from '@angular/forms';
     EditorComponent,
     UsersComponent,
     MessageComponent,
-    MdTable],
+    /*MdTable*/],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class MainModule {

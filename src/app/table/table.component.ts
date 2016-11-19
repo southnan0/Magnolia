@@ -8,8 +8,8 @@ import {Component, OnInit, OnChanges, Input} from '@angular/core';
   providers: []
 })
 export class MdTable implements OnInit,OnChanges {
-  @Input data:Array;
-  arrKey:Array;
+ /* @Input data:Array;
+  arrKey:Array;*/
 
   constructor() {
   }

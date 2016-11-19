@@ -8,6 +8,10 @@
 .header-panel {
   flex: 1;
   border-bottom: 1px solid #ccc;
+  background-image:url('/img/header.png');
+  background-size:auto 100%;
+  background-repeat: no-repeat;
+  background-color: #eae2f4;
 }
 
 .body-panel {
