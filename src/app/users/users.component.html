@@ -1,1 +1,22 @@
-<!--<md-table></md-table>-->
+<div class="operate">
+  <div class="operate-panel">
+    <md-button class="submit" (onSubmit)="_add($event)">新增</md-button>
+    <md-button class="submit" (onSubmit)="_edit($event)">编辑</md-button>
+    <md-button class="submit" (onSubmit)="_del($event)">删除</md-button>
+  </div>
+  <div class="search-panel">
+    <md-input placeholder="用户名称" class="search-input" value="{{userName}}"
+              (onChange)="_onChange('userName',$event)"></md-input>
+    <md-button class="search" (onSubmit)="_edit($event)">查找</md-button>
+  </div>
+</div>
+<md-table [data]="data" [arrKey]="arrKey" (handleItem)="_handleItem($event)"></md-table>
+<md-popup (hidePoput)="_exitEdit()" [show]="edit">
+  <md-input placeholder="用户名称" class="search-input" value="{{userName}}"
+            (onChange)="_onChange('userName',$event)"></md-input>
+</md-popup>
+
+<md-popup (hidePoput)="_exitEdit()" [show]="add">
+  <md-input placeholder="用户名称" class="search-input" value="{{userName}}"
+            (onChange)="_onChange('userName',$event)"></md-input>
+</md-popup>

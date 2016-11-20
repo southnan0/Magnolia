@@ -1,0 +1,5 @@
+<div *ngIf="_show" class="md-popup" (click)="_hidePopup($event)">
+  <div (click)="_handleCnt($event)">
+    <ng-content></ng-content>
+  </div>
+</div>

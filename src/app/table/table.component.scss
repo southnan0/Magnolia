@@ -1,4 +1,45 @@
-.md-table{
+.md-table {
   height: 100%;
   display: flex;
+  flex-direction: column;
+  color: #333;
+  font-size: 14px;
+  overflow-x: scroll;
+  > ul {
+    border-bottom: 1px solid #dadada;
+    display: flex;
+    min-width: 400px;
+    &:hover{
+      background-color:#eae2f4;
+    }
+    &:first-child {
+      border-top: 1px solid #dadada;
+      font-size: 12px;
+      font-weight: bold;
+      &:hover{
+        background-color:inherit;
+      }
+    }
+    > li {
+      &.flex-item {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      border-right: 1px solid #dadada;
+      min-height: 40px;
+      &:first-child {
+        border-left: 1px solid #dadada;
+        width: 40px;
+        > label {
+          /*width: 100%;*/
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
 }

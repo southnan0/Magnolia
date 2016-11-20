@@ -1,0 +1,29 @@
+{
+  "header": {
+    "code": "0000",
+    "message": ""
+  },
+  "body": {
+    "info":[{
+      "userId":"234341",
+      "userName":"张三",
+      "password":"234ewe",
+      "status":"0",
+      "role":"管理员",
+      "creator":"陈卓囡",
+      "createTime":"2016-01-01",
+      "editor":"郝玉凤",
+      "editTime":"2016-09-01"
+    },{
+      "userId":"234342",
+      "userName":"李四",
+      "password":"234ewe",
+      "status":"0",
+      "role":"管理员",
+      "creator":"陈卓囡",
+      "createTime":"2016-01-01",
+      "editor":"郝玉凤",
+      "editTime":"2016-09-01"
+    }]
+  }
+}
