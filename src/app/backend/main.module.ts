@@ -11,6 +11,7 @@ import {CommonModule} from '@angular/common';
 import {MdInputModule} from '../input/input.component';
 import {MdButtonModule} from '../button/button.component';
 import {FormsModule} from '@angular/forms';
+import {CanDeactivateGuard} from '../../services/can-deactivate-guard.service';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import {FormsModule} from '@angular/forms';
     MdInputModule.forRoot(),
     MdButtonModule.forRoot()
   ],
-  providers: [],
+  providers: [CanDeactivateGuard],
   declarations: [
     MainComponent,
     MenuComponent,

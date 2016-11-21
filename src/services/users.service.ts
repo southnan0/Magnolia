@@ -18,7 +18,7 @@ export class GetUserInfoService {
           },
           'body': {
             'info|1-10': [{
-              'userId|+1': 1,
+              'userId': '1',
               'userName': Mock.Random.cname(),
               'password': 'er32df',
               'status': '0',
@@ -45,8 +45,44 @@ export class EditUserInfoService {
   constructor(private http:Http) {
   }
 
-  get() {
+  get(userId,userName,password) {
     return this.http.post(`services/editUserInfo`, {body: {}})
+      .toPromise()
+      .then(response => response.json().body)
+      .catch(this.handleError)
+  }
+
+  private handleError(error:any):Promise<any> {
+    console.error('An error occurred', error); // for demo purposes only
+    return Promise.reject(error.message || error);
+  }
+}
+
+@Injectable()
+export class AddUserInfoService {
+  constructor(private http:Http) {
+  }
+
+  get(userId,userName,password) {
+    return this.http.post(`services/addUserInfo`, {body: {}})
+      .toPromise()
+      .then(response => response.json().body)
+      .catch(this.handleError)
+  }
+
+  private handleError(error:any):Promise<any> {
+    console.error('An error occurred', error); // for demo purposes only
+    return Promise.reject(error.message || error);
+  }
+}
+
+@Injectable()
+export class DelUserInfoService {
+  constructor(private http:Http) {
+  }
+
+  get(userId) {
+    return this.http.post(`services/delUserInfo`, {body: {userId}})
       .toPromise()
       .then(response => response.json().body)
       .catch(this.handleError)

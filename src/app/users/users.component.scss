@@ -30,3 +30,23 @@
 .search-panel {
 
 }
+
+.add-panel {
+  margin: 30px auto;
+  > h3 {
+    color: #79589f;
+    height: 50px;
+    line-height: 50px;
+  }
+  .add-input {
+    max-width: 300px;
+    display: block;
+    margin: 20px auto;
+  }
+  .add-button {
+    max-width: 300px;
+    display: block;
+    margin: 20px auto;
+  }
+}
+

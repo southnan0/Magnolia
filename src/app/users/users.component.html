@@ -12,11 +12,29 @@
 </div>
 <md-table [data]="data" [arrKey]="arrKey" (handleItem)="_handleItem($event)"></md-table>
 <md-popup (hidePoput)="_exitEdit()" [show]="edit">
-  <md-input placeholder="用户名称" class="search-input" value="{{userName}}"
-            (onChange)="_onChange('userName',$event)"></md-input>
+  <div class="add-panel">
+    <h3>用户修改{{userId}}</h3>
+    <md-input placeholder="账号" class="add-input" value="{{userId}}"
+              (onChange)="_onChange('userId',$event)"></md-input>
+    <md-input placeholder="用户名称" class="add-input" value="{{userName}}"
+              (onChange)="_onChange('userName',$event)"></md-input>
+    <md-input placeholder="密码" class="add-input" value="{{password}}"
+              (onChange)="_onChange('password',$event)"></md-input>
+
+    <md-button class="add-button" (onSubmit)="_submit($event)">保 存</md-button>
+  </div>
 </md-popup>
 
 <md-popup (hidePoput)="_exitEdit()" [show]="add">
-  <md-input placeholder="用户名称" class="search-input" value="{{userName}}"
-            (onChange)="_onChange('userName',$event)"></md-input>
+  <div class="add-panel">
+    <h3>用户新增</h3>
+    <md-input placeholder="账号" class="add-input" value="{{userId}}"
+              (onChange)="_onChange('userId',$event)"></md-input>
+    <md-input placeholder="用户名称" class="add-input" value="{{userName}}"
+              (onChange)="_onChange('userName',$event)"></md-input>
+    <md-input placeholder="密码" class="add-input" value="{{password}}"
+              (onChange)="_onChange('password',$event)"></md-input>
+
+    <md-button class="add-button" (onSubmit)="_submit($event)">保 存</md-button>
+  </div>
 </md-popup>
