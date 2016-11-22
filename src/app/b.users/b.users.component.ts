@@ -12,8 +12,8 @@ interface dataItem {
 
 @Component({
   selector: 'my-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss'],
+  templateUrl: './b.users.component.html',
+  styleUrls: ['./b.users.component.scss'],
   providers: [GetUserInfoService, AddUserInfoService, EditUserInfoService, DelUserInfoService]
 })
 export class UsersComponent implements OnInit,OnChanges {

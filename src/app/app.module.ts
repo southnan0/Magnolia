@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 
 import {AppComponent} from './app.component';
 import {AboutComponent} from './about/about.component';
-import {CheckComponent} from './check/check.component';
+import {CheckComponent} from '../common/check/check.component';
 import {ApiService} from './shared';
 import {routing} from './app.routing';
 

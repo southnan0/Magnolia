@@ -5,8 +5,8 @@ import {Menu} from '../../class/menu';
 
 @Component({
   selector: 'my-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss'],
+  templateUrl: './b.menu.component.html',
+  styleUrls: ['./b.menu.component.scss'],
   providers: [GetMenuInfoService]
 })
 export class MenuComponent implements OnInit {

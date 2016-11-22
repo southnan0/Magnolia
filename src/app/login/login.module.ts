@@ -1,7 +1,7 @@
 import {NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {LoginComponent} from './login.component';
-import {MdInputModule} from '../input/input.component';
-import {MdButtonModule} from '../button/button.component';
+import {MdInputModule} from '../../common/input/input.component';
+import {MdButtonModule} from '../../common/button/button.component';
 import {FormsModule} from '@angular/forms';
 import {routing} from './login.routing';
 

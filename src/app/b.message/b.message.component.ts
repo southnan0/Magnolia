@@ -2,8 +2,8 @@ import {Component, OnInit, OnChanges} from '@angular/core';
 
 @Component({
   selector: 'my-message',
-  templateUrl: './message.component.html',
-  styleUrls: ['./message.component.scss'],
+  templateUrl: './b.message.component.html',
+  styleUrls: ['./b.message.component.scss'],
   providers: []
 })
 export class MessageComponent implements OnInit,OnChanges {

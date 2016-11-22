@@ -1,7 +1,7 @@
 import {Routes, RouterModule} from '@angular/router';
 import {MainComponent} from './main.component';
-import {UsersComponent} from '../users/users.component';
-import {MessageComponent} from '../message/message.component';
+import {UsersComponent} from '../b.users/b.users.component';
+import {MessageComponent} from '../b.message/b.message.component.ts';
 import {CanDeactivateGuard} from '../../services/can-deactivate-guard.service';
 
 const routes:Routes = [{

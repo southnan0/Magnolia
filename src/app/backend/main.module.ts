@@ -1,15 +1,15 @@
 import {NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {MainComponent} from './main.component';
-import {MenuComponent} from '../menu/menu.component';
-import {UsersComponent} from '../users/users.component';
-import {MessageComponent} from '../message/message.component';
-import {EditorComponent} from '../editor/editor.component';
-import {MdTable} from '../table/table.component';
-import {MdPopup} from '../popup/popup.component';
+import {MenuComponent} from '../b.menu/b.menu.component';
+import {UsersComponent} from '../b.users/b.users.component';
+import {MessageComponent} from '../b.message/b.message.component.ts';
+import {EditorComponent} from '../../common/editor/editor.component';
+import {MdTable} from '../../common/table/table.component';
+import {MdPopup} from '../../common/popup/popup.component';
 import {routing} from './main.routing';
 import {CommonModule} from '@angular/common';
-import {MdInputModule} from '../input/input.component';
-import {MdButtonModule} from '../button/button.component';
+import {MdInputModule} from '../../common/input/input.component';
+import {MdButtonModule} from '../../common/button/button.component';
 import {FormsModule} from '@angular/forms';
 import {CanDeactivateGuard} from '../../services/can-deactivate-guard.service';
 
