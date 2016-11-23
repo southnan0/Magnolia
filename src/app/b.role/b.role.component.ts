@@ -1,26 +1,26 @@
 import {Component, OnInit, OnChanges} from '@angular/core';
 import {
-  GetMenuInfoService,
-  AddMenuInfoService,
-  EditMenuInfoService,
-  DelMenuInfoService
-} from '../../services/menu.service';
+  GetRoleInfoService,
+  AddRoleInfoService,
+  EditRoleInfoService,
+  DelRoleInfoService
+} from '../../services/role.service';
 import {ActivatedRoute, Router} from '@angular/router';
 interface dataItem {
   checked?:boolean
 }
 
 @Component({
-  selector: 'my-menus',
-  templateUrl: './b.menus.component.html',
-  styleUrls: ['./b.menus.component.scss'],
-  providers: [GetMenuInfoService, AddMenuInfoService, EditMenuInfoService, DelMenuInfoService]
+  selector: 'my-role',
+  templateUrl: './b.role.component.html',
+  styleUrls: ['./b.role.component.scss'],
+  providers: [GetRoleInfoService, AddRoleInfoService, EditRoleInfoService, DelRoleInfoService]
 })
-export class MenusComponent implements OnInit,OnChanges {
+export class RoleComponent implements OnInit,OnChanges {
   data:dataItem[];
   arrKey:Object = {
-    menuId: '菜单编号',
-    menuName: '菜单名称',
+    roleId: '角色编号',
+    roleName: '角色名称',
     status: '状态',
     creator: '创建人',
     createTime: '创建时间',
@@ -30,13 +30,13 @@ export class MenusComponent implements OnInit,OnChanges {
   private edit:boolean = false;
   private add:boolean = false;
   private sub:any;
-  private menuName:string;
-  private menuId:string;
+  private roleName:string;
+  private roleId:string;
 
-  constructor(private getMenuInfoService:GetMenuInfoService,
-              private addMenuInfoService:AddMenuInfoService,
-              private editMenuInfoService:EditMenuInfoService,
-              private delMenuInfoService:DelMenuInfoService,
+  constructor(private getRoleInfoService:GetRoleInfoService,
+              private addRoleInfoService:AddRoleInfoService,
+              private editRoleInfoService:EditRoleInfoService,
+              private delRoleInfoService:DelRoleInfoService,
               private _router:Router,
               private _activatedRoute:ActivatedRoute) {
   }
@@ -46,7 +46,7 @@ export class MenusComponent implements OnInit,OnChanges {
       this.edit = params['edit'] === 'true';
       this.add = params['add'] === 'true';
       if (!this.edit && !this.add) {
-        this.getMenuInfoService
+        this.getRoleInfoService
           .get()
           .then((info)=> {
             this.data = info;
@@ -69,8 +69,8 @@ export class MenusComponent implements OnInit,OnChanges {
   }
 
   _handleItem(item):void {
-    this._resetMenuData(item.menuId, item.menuName);
-    this._router.navigate(['backend', 'menus'], {queryParams: {edit: true}})
+    this._resetRoleData(item.roleId, item.roleName);
+    this._router.navigate(['backend', 'role'], {queryParams: {edit: true}})
   }
 
   _exitEdit():void {
@@ -84,40 +84,40 @@ export class MenusComponent implements OnInit,OnChanges {
         arr.push(index)
       }
     });
-    this.delMenuInfoService.get(arr)
+    this.delRoleInfoService.get(arr)
       .then(()=> {
         console.info('删除成功')
       })
   }
 
   _add():void {
-    this._resetMenuData();
-    this._router.navigate(['/backend/menus'], {queryParams: {add: true}})
+    this._resetRoleData();
+    this._router.navigate(['/backend/role'], {queryParams: {add: true}})
   }
 
-  _resetMenuData(menuId:string = '', menuName:string = '') {
-    this.menuId = menuId;
-    this.menuName = menuName;
+  _resetRoleData(roleId:string = '', roleName:string = '') {
+    this.roleId = roleId;
+    this.roleName = roleName;
   }
 
   _submit():void {
     if (this.edit) {
-      this._editMenu();
+      this._editRole();
     } else if (this.add) {
-      this._addMenu();
+      this._addRole();
     }
   }
 
-  _addMenu():void {
-    this.addMenuInfoService.get(this.menuName)
+  _addRole():void {
+    this.addRoleInfoService.get(this.roleName)
       .then(()=> {
         console.info('新增成功')
         history.back()
       })
   }
 
-  _editMenu():void {
-    this.editMenuInfoService.get(this.menuName)
+  _editRole():void {
+    this.editRoleInfoService.get(this.roleName)
       .then(()=> {
         console.info('编辑成功')
         history.back()

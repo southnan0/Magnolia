@@ -5,17 +5,17 @@
     <md-button class="submit" (onSubmit)="_del($event)">删除</md-button>
   </div>
   <div class="search-panel">
-    <md-input placeholder="菜单名称" class="search-input" value="{{menuName}}"
-              (onChange)="_onChange('menuName',$event)"></md-input>
+    <md-input placeholder="角色名称" class="search-input" value="{{roleName}}"
+              (onChange)="_onChange('roleName',$event)"></md-input>
     <md-button class="search" (onSubmit)="_edit($event)">查找</md-button>
   </div>
 </div>
 <md-table [data]="data" [arrKey]="arrKey" (handleItem)="_handleItem($event)"></md-table>
 <md-popup (hidePoput)="_exitEdit()" [show]="edit">
   <div class="add-panel">
-    <h3>菜单修改{{menuId}}</h3>
-    <md-input placeholder="菜单名称" class="add-input" value="{{menuName}}"
-              (onChange)="_onChange('menuName',$event)"></md-input>
+    <h3>角色修改{{roleId}}</h3>
+    <md-input placeholder="角色名称" class="add-input" value="{{roleName}}"
+              (onChange)="_onChange('roleName',$event)"></md-input>
 
     <md-button class="add-button" (onSubmit)="_submit($event)">保 存</md-button>
   </div>
@@ -23,9 +23,9 @@
 
 <md-popup (hidePoput)="_exitEdit()" [show]="add">
   <div class="add-panel">
-    <h3>菜单新增</h3>
-    <md-input placeholder="菜单名称" class="add-input" value="{{menuName}}"
-              (onChange)="_onChange('menuName',$event)"></md-input>
+    <h3>角色新增</h3>
+    <md-input placeholder="角色名称" class="add-input" value="{{roleName}}"
+              (onChange)="_onChange('roleName',$event)"></md-input>
 
     <md-button class="add-button" (onSubmit)="_submit($event)">保 存</md-button>
   </div>

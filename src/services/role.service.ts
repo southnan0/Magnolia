@@ -1,33 +1,21 @@
 import {Injectable}     from '@angular/core';
 import {Http} from '@angular/http';
-import {Menu} from '../class/menu';
 var Mock = require('mockjs');
 const handleError = (error:any):Promise<any> => {
   console.error('An error occurred', error); // for demo purposes only
   return Promise.reject(error.message || error);
 };
-@Injectable()
-export class MenuService {
-  constructor(private http:Http) {
-  }
 
-  get(userName:string):Promise<Menu[]> {
-    return this.http.get(`services/menu?userName=${userName}`)
-      .toPromise()
-      .then(response => response.json().body.menuList as Menu[])
-      .catch(handleError)
-  }
-}
 //todo  如何获取登录成功的操作员工号？
 @Injectable()
-export class GetMenuInfoService {
+export class GetRoleInfoService {
   constructor(private http:Http) {
   }
 
-  get():Promise<Menu[]> {
-    return this.http.post(`services/getMenuInfo`, {header: {operId: ''}})
+  get():Promise<any> {
+    return this.http.post(`services/getRoleInfo`, {header: {operId: ''}})
       .toPromise()
-      .then(response=>response.json().body.info as Menu[]/*, ()=> {
+      .then(response=>response.json().body.info/*, ()=> {
        /!*let data = Mock.mock({
        'header': {
        'code': '0000',
@@ -35,10 +23,10 @@ export class GetMenuInfoService {
        },
        'body': {
        'info|1-5': [{
-       'menuId|+1': 1,
-       'menuName': '@FIRST',
-       'parentMenuId': '',
-       'parentMenuName': '',
+       'roleId|+1': 1,
+       'roleName': '@FIRST',
+       'parentRoleId': '',
+       'parentRoleName': '',
        'creator': '',
        'createTime': Mock.Random.date('yyyy-MM-dd'),
        'editor': '',
@@ -55,12 +43,12 @@ export class GetMenuInfoService {
 }
 
 @Injectable()
-export class EditMenuInfoService {
+export class EditRoleInfoService {
   constructor(private http:Http) {
   }
 
-  get(menuName):Promise<Menu[]> {
-    return this.http.post(`services/editMenuInfo`, {header: {operId: ''}})
+  get(roleName):Promise<any> {
+    return this.http.post(`services/editRoleInfo`, {header: {operId: ''}})
       .toPromise()
       .then(response=>response.json().body)
       .catch(handleError)
@@ -68,12 +56,12 @@ export class EditMenuInfoService {
 }
 
 @Injectable()
-export class DelMenuInfoService {
+export class DelRoleInfoService {
   constructor(private http:Http) {
   }
 
-  get(menu):Promise<Menu[]> {
-    return this.http.post(`services/delMenuInfo`, {header: {operId: ''}})
+  get(role):Promise<any> {
+    return this.http.post(`services/delRoleInfo`, {header: {operId: ''}})
       .toPromise()
       .then(response=>response.json().body)
       .catch(handleError)
@@ -81,12 +69,12 @@ export class DelMenuInfoService {
 }
 
 @Injectable()
-export class AddMenuInfoService {
+export class AddRoleInfoService {
   constructor(private http:Http) {
   }
 
-  get(menuName):Promise<Menu[]> {
-    return this.http.post(`services/addMenuInfo`, {header: {operId: ''}})
+  get(roleName):Promise<any> {
+    return this.http.post(`services/addRoleInfo`, {header: {operId: ''}})
       .toPromise()
       .then(response=>response.json().body)
       .catch(handleError)
