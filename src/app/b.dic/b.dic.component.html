@@ -1,0 +1,34 @@
+<div class="operate">
+  <div class="operate-panel">
+    <md-button class="submit" (onSubmit)="_add($event)">新增子参数</md-button>
+    <md-button class="submit" (onSubmit)="_del($event)">删除</md-button>
+  </div>
+  <div class="search-panel">
+    <md-input placeholder="参数名称" class="search-input" value="{{dicName}}"
+              (onChange)="_onChange('dicName',$event)"></md-input>
+    <md-button class="search" (onSubmit)="_search($event)">查找</md-button>
+  </div>
+</div>
+
+<md-table [data]="dicInfo" [arrKey]="arrDicKey" (handleItem)="_selectDic($event)"></md-table>
+<md-table [data]="dicItem" [arrKey]="arrDicItemKey" (handleItem)="_selectDicItem($event)"></md-table>
+
+<md-popup (hidePoput)="_exitEdit()" [show]="edit">
+  <div class="add-panel">
+    <h3>参数项修改{{dicItemId}}</h3>
+    <md-input placeholder="参数项名称" class="add-input" value="{{dicItemName}}"
+              (onChange)="_onChange('dicItemName',$event)"></md-input>
+
+    <md-button class="add-button" (onSubmit)="_submit($event)">保 存</md-button>
+  </div>
+</md-popup>
+
+<md-popup (hidePoput)="_exitEdit()" [show]="add">
+  <div class="add-panel">
+    <h3>参数项新增</h3>
+    <md-input placeholder="参数项名称" class="add-input" value="{{dicItemName}}"
+              (onChange)="_onChange('dicItemName',$event)"></md-input>
+
+    <md-button class="add-button" (onSubmit)="_submit($event)">保 存</md-button>
+  </div>
+</md-popup>

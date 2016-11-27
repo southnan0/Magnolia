@@ -1,0 +1,53 @@
+//todo 该模块的样式跟用户的样式是重复的
+.operate {
+  text-align: left;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .submit {
+    display: inline-block;
+    width: 80px;
+  }
+  .search {
+    display: inline-block;
+    width: 50px;
+  }
+}
+
+.search-input {
+  width: 200px;
+  display: inline-block;
+  border-top: 1px solid #dadada;
+  border-left: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+  box-sizing: border-box;
+}
+
+.operate-panel {
+
+}
+
+.search-panel {
+
+}
+
+.add-panel {
+  margin: 30px auto;
+  > h3 {
+    color: #79589f;
+    height: 50px;
+    line-height: 50px;
+  }
+  .add-input {
+    max-width: 300px;
+    display: block;
+    margin: 20px auto;
+  }
+  .add-button {
+    max-width: 300px;
+    display: block;
+    margin: 20px auto;
+  }
+}
+
