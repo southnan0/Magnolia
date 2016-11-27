@@ -1,16 +1,14 @@
-import {Injectable}     from '@angular/core';
-import {Http} from '@angular/http';
+import {Service} from './index';
 var Mock = require('mockjs');
 
-@Injectable()
-export class GetUserInfoService {
-  constructor(private http:Http) {
+export class GetUserInfoService extends Service {
+  constructor(http) {
+    super(http);
   }
 
   get() {
-    return this.http.post(`services/getUserInfo`, {body: {}})
-      .toPromise()
-      .then(response => response.json().body.info, ()=> {
+    return this.post(`services/getUserInfo`, {})
+      .then(response => response.json().body.info, () => {
         return Mock.mock({
           'header': {
             'code': '0000',
@@ -33,63 +31,41 @@ export class GetUserInfoService {
       })
       .catch(this.handleError)
   }
-
-  private handleError(error:any):Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
-  }
 }
 
-@Injectable()
-export class EditUserInfoService {
-  constructor(private http:Http) {
+export class EditUserInfoService extends Service {
+  constructor(http) {
+    super(http);
   }
 
-  get(userId,userName,password) {
+  get(userId, userName, password) {
     return this.http.post(`services/editUserInfo`, {body: {}})
       .toPromise()
       .then(response => response.json().body)
       .catch(this.handleError)
   }
-
-  private handleError(error:any):Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
-  }
 }
 
-@Injectable()
-export class AddUserInfoService {
-  constructor(private http:Http) {
+export class AddUserInfoService extends Service {
+  constructor(http) {
+    super(http);
   }
 
-  get(userId,userName,password) {
-    return this.http.post(`services/addUserInfo`, {body: {}})
-      .toPromise()
+  get(userId, userName, password) {
+    return this.post(`services/addUserInfo`, {body: {}})
       .then(response => response.json().body)
       .catch(this.handleError)
   }
-
-  private handleError(error:any):Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
-  }
 }
 
-@Injectable()
-export class DelUserInfoService {
-  constructor(private http:Http) {
+export class DelUserInfoService extends Service {
+  constructor(http) {
+    super(http);
   }
 
   get(userId) {
-    return this.http.post(`services/delUserInfo`, {body: {userId}})
-      .toPromise()
+    return this.post(`services/delUserInfo`, {userId})
       .then(response => response.json().body)
       .catch(this.handleError)
-  }
-
-  private handleError(error:any):Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
   }
 }

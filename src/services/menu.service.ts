@@ -1,33 +1,27 @@
-import {Injectable}     from '@angular/core';
-import {Http} from '@angular/http';
 import {Menu} from '../class/menu';
+import {Service} from './index';
 var Mock = require('mockjs');
-const handleError = (error:any):Promise<any> => {
-  console.error('An error occurred', error); // for demo purposes only
-  return Promise.reject(error.message || error);
-};
-@Injectable()
-export class MenuService {
-  constructor(private http:Http) {
+
+export class MenuService extends Service {
+  constructor(http) {
+    super(http);
   }
 
-  get(userName:string):Promise<Menu[]> {
-    return this.http.get(`services/menu?userName=${userName}`)
-      .toPromise()
+  get(userName: string): Promise<Menu[]> {
+    return this.post('menu',{})
       .then(response => response.json().body.menuList as Menu[])
-      .catch(handleError)
+      .catch(this.handleError)
   }
 }
 //todo  如何获取登录成功的操作员工号？
-@Injectable()
-export class GetMenuInfoService {
-  constructor(private http:Http) {
+export class GetMenuInfoService extends Service {
+  constructor(http) {
+    super(http);
   }
 
-  get():Promise<Menu[]> {
-    return this.http.post(`services/getMenuInfo`, {header: {operId: ''}})
-      .toPromise()
-      .then(response=>response.json().body.info as Menu[]/*, ()=> {
+  get(): Promise<Menu[]> {
+    return this.post(`getMenuInfo`, {})
+      .then(response => response.json().body.info as Menu[]/*, ()=> {
        /!*let data = Mock.mock({
        'header': {
        'code': '0000',
@@ -50,45 +44,42 @@ export class GetMenuInfoService {
        console.info(data.body.info)*!/
        return data.body.info;
        }*/)
-      .catch(handleError)
+      .catch(this.handleError)
   }
 }
 
-@Injectable()
-export class EditMenuInfoService {
-  constructor(private http:Http) {
+export class EditMenuInfoService extends Service {
+  constructor(http) {
+    super(http);
   }
 
-  get(menuName):Promise<Menu[]> {
-    return this.http.post(`services/editMenuInfo`, {header: {operId: ''}})
-      .toPromise()
-      .then(response=>response.json().body)
-      .catch(handleError)
-  }
-}
-
-@Injectable()
-export class DelMenuInfoService {
-  constructor(private http:Http) {
-  }
-
-  get(menu):Promise<Menu[]> {
-    return this.http.post(`services/delMenuInfo`, {header: {operId: ''}})
-      .toPromise()
-      .then(response=>response.json().body)
-      .catch(handleError)
+  get(menuName): Promise<Menu[]> {
+    return this.post(`services/editMenuInfo`, {header: {operId: ''}})
+      .then(response => response.json().body)
+      .catch(this.handleError)
   }
 }
 
-@Injectable()
-export class AddMenuInfoService {
-  constructor(private http:Http) {
+export class DelMenuInfoService extends Service {
+  constructor( http) {
+    super(http);
   }
 
-  get(menuName):Promise<Menu[]> {
-    return this.http.post(`services/addMenuInfo`, {header: {operId: ''}})
-      .toPromise()
-      .then(response=>response.json().body)
-      .catch(handleError)
+  get(menu): Promise<Menu[]> {
+    return this.post(`services/delMenuInfo`, {header: {operId: ''}})
+      .then(response => response.json().body)
+      .catch(this.handleError)
+  }
+}
+
+export class AddMenuInfoService extends Service{
+  constructor(http) {
+    super(http)
+  }
+
+  get(menuName): Promise<Menu[]> {
+    return this.post(`services/addMenuInfo`, {header: {operId: ''}})
+      .then(response => response.json().body)
+      .catch(this.handleError)
   }
 }

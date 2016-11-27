@@ -16,3 +16,6 @@ $ typings install
 # start the server
 $ npm start
 ```
+
+## 后台的功能还剩下参数管理，公司信息估计不做
+## 接下来要确定前台的界面，还有开发前台，整理代码

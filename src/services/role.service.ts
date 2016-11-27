@@ -1,21 +1,14 @@
-import {Injectable}     from '@angular/core';
-import {Http} from '@angular/http';
+import {Service} from './index';
 var Mock = require('mockjs');
-const handleError = (error:any):Promise<any> => {
-  console.error('An error occurred', error); // for demo purposes only
-  return Promise.reject(error.message || error);
-};
-
 //todo  如何获取登录成功的操作员工号？
-@Injectable()
-export class GetRoleInfoService {
-  constructor(private http:Http) {
+export class GetRoleInfoService extends Service {
+  constructor(http) {
+    super(http);
   }
 
-  get():Promise<any> {
-    return this.http.post(`services/getRoleInfo`, {header: {operId: ''}})
-      .toPromise()
-      .then(response=>response.json().body.info/*, ()=> {
+  get(): Promise<any> {
+    return this.post('getRoleInfo', {})
+      .then(response => response.json().body.info/*, ()=> {
        /!*let data = Mock.mock({
        'header': {
        'code': '0000',
@@ -38,45 +31,42 @@ export class GetRoleInfoService {
        console.info(data.body.info)*!/
        return data.body.info;
        }*/)
-      .catch(handleError)
+      .catch(this.handleError)
   }
 }
 
-@Injectable()
-export class EditRoleInfoService {
-  constructor(private http:Http) {
+export class EditRoleInfoService extends Service {
+  constructor(http) {
+    super(http);
   }
 
-  get(roleName):Promise<any> {
-    return this.http.post(`services/editRoleInfo`, {header: {operId: ''}})
-      .toPromise()
-      .then(response=>response.json().body)
-      .catch(handleError)
-  }
-}
-
-@Injectable()
-export class DelRoleInfoService {
-  constructor(private http:Http) {
-  }
-
-  get(role):Promise<any> {
-    return this.http.post(`services/delRoleInfo`, {header: {operId: ''}})
-      .toPromise()
-      .then(response=>response.json().body)
-      .catch(handleError)
+  get(roleName): Promise<any> {
+    return this.post('editRoleInfo', {})
+      .then(response => response.json().body)
+      .catch(this.handleError)
   }
 }
 
-@Injectable()
-export class AddRoleInfoService {
-  constructor(private http:Http) {
+export class DelRoleInfoService extends Service {
+  constructor(http) {
+    super(http);
   }
 
-  get(roleName):Promise<any> {
-    return this.http.post(`services/addRoleInfo`, {header: {operId: ''}})
-      .toPromise()
-      .then(response=>response.json().body)
-      .catch(handleError)
+  get(role): Promise<any> {
+    return this.post('delRoleInfo', {})
+      .then(response => response.json().body)
+      .catch(this.handleError)
+  }
+}
+
+export class AddRoleInfoService extends Service {
+  constructor(http) {
+    super(http);
+  }
+
+  get(roleName): Promise<any> {
+    return this.post('addRoleInfo', {})
+      .then(response => response.json().body)
+      .catch(this.handleError)
   }
 }
