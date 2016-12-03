@@ -44,6 +44,16 @@
           "editor":"",
           "editTime":"",
           "remark":"关于我们"
+        },{
+          "menuId":"dic",
+          "menuName":"参数管理",
+          "parentMenuId":"",
+          "parentMenuName":"",
+          "creator":"陈小姐",
+          "createTime":"2016-01-01",
+          "editor":"",
+          "editTime":"",
+          "remark":"关于我们"
         }]
     }
 }

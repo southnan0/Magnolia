@@ -10,8 +10,12 @@
   </div>
 </div>
 
-<md-table [data]="dicInfo" [arrKey]="arrDicKey" (handleItem)="_selectDic($event)"></md-table>
-<md-table [data]="dicItem" [arrKey]="arrDicItemKey" (handleItem)="_selectDicItem($event)"></md-table>
+<div class="dic-panel">
+  <md-table [data]="dicInfo" [arrKey]="arrDicKey" [disableCheck]="true" (handleItem)="_selectDic($event)"></md-table>
+</div>
+<div class="dic-item-panel">
+  <md-table [data]="dicItem" [arrKey]="arrDicItemKey" (handleItem)="_selectDicItem($event)"></md-table>
+</div>
 
 <md-popup (hidePoput)="_exitEdit()" [show]="edit">
   <div class="add-panel">

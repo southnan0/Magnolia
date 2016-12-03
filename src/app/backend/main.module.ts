@@ -5,6 +5,7 @@ import {UsersComponent} from '../b.users/b.users.component';
 import {MenusComponent} from '../b.menus/b.menus.component';
 import {MessageComponent} from '../b.message/b.message.component.ts';
 import {RoleComponent} from '../b.role/b.role.component.ts';
+import {DicComponent} from '../b.dic/b.dic.component.ts';
 import {EditorComponent} from '../../common/editor/editor.component';
 import {MdTable} from '../../common/table/table.component';
 import {MdPopup} from '../../common/popup/popup.component';
@@ -32,6 +33,7 @@ import {CanDeactivateGuard} from '../../services/can-deactivate-guard.service';
     MenusComponent,
     MessageComponent,
     RoleComponent,
+    DicComponent,
     MdTable,
     MdPopup],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

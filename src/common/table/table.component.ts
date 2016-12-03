@@ -17,6 +17,7 @@ export class MdTable implements OnInit,OnChanges {
   private _keys:Array<any>;
   private _objKey:Object;
   private _fullSelected:boolean;
+  private _disableCheck:boolean=false;
 
   get data():dataItem[] {
     return this._data;
@@ -42,6 +43,12 @@ export class MdTable implements OnInit,OnChanges {
     if (v !== this._keys) {
       this._objKey = v;
       this._keys = Object.keys(v);
+    }
+  }
+
+  @Input() set disableCheck(v:boolean) {
+    if (v !== this._disableCheck) {
+      this._disableCheck = v;
     }
   }
 

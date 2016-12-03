@@ -4,11 +4,11 @@
   flex-direction: column;
   color: #333;
   font-size: 14px;
-  overflow-x: scroll;
+  overflow-x: auto;
   > ul {
     border-bottom: 1px solid #dadada;
     display: flex;
-    min-width: 400px;
+    //min-width: 400px;
     &:hover{
       background-color:#eae2f4;
     }
@@ -28,6 +28,7 @@
         justify-content: center;
       }
       border-right: 1px solid #dadada;
+      min-width:40px;
       min-height: 40px;
       &:first-child {
         border-left: 1px solid #dadada;

@@ -1,6 +1,6 @@
 <div class="md-table">
   <ul>
-    <li>
+    <li *ngIf="!_disableCheck">
       <label attr.for="fullSelect" (click)="_fullSelect('label',$event)">
         <input type="checkbox" attr.id="fullSelect" [checked]="_fullSelected" (click)="_fullSelect('input',$event)"/>
       </label>
@@ -8,7 +8,7 @@
     <li *ngFor="let key of _keys" class="flex-item"><span>{{_objKey[key]}}</span></li>
   </ul>
   <ul *ngFor="let item of _data;let i=index" (click)="_handleItem(item,$event)">
-    <li>
+    <li *ngIf="!_disableCheck">
       <label attr.for="check_{{i}}" (click)="_select('label',item,$event)">
         <input type="checkbox" attr.id="check_{{i}}" [checked]="item.checked" (click)="_select('input',item,$event)"/>
       </label>
